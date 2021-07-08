@@ -75,8 +75,7 @@ console.log("Your random number is " + random + " and that's " + isTwo(random));
  */
 
 function calculateTip(num1, num2) {
-	var tipAmount = num1 * num2;
-	return tipAmount.toFixed(2);
+	return (num1 * num2 /100).toFixed(2);
 }
 
 /**
@@ -88,7 +87,6 @@ function calculateTip(num1, num2) {
 
 var billTotal = prompt("How much was your bill?");
 var tipPercentage = prompt("What percentage you like to tip?");
-tipPercentage = tipPercentage/100;
 alert("Your total tip amount is $" + calculateTip(billTotal, tipPercentage));
 
 /**

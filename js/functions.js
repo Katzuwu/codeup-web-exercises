@@ -105,6 +105,5 @@ alert("Your total tip amount is $" + calculateTip(billTotal, tipPercentage));
  */
 
 function applyDiscount(num1, num2){
-	var discountPercent = num2 / 100;
-	return num1 - (num1 * discountPercent);
+	return num1 - (num1 * num2 / 100);
 }

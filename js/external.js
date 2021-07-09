@@ -43,3 +43,11 @@
 // var premiumMember = confirm("Are you a premium member? Click \'Cancel\' if not.");
 // var itemCount = confirm("Do you have more than 2 items in your cart? Click \'Cancel\' if you do not.");
 //
+// var discountBreakPoint = 2;
+// var numberOfItems = prompt("How many items were bought?");
+// var offerIsNotExpired = confirm("Confirm offer has not expired.");
+// var isPremiumMember = confirm("Customer is a premium member");
+//
+// var productDiscountIsApplied = offerIsNotExpired && (isPremiumMember || numberOfItems >= discountBreakPoint);
+//
+// alert("Product discount applied: " + productDiscountIsApplied);

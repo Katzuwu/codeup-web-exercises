@@ -174,28 +174,30 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
 
-if(confirm("Master, would you like to enter a number for me?")) {
-	var userNumber = (prompt("What number will you pick, Master?"));
-		} else {
-			alert("Oh...okay. Thank you for your time Master.");
-		}
-
-		if(typeof parseFloat(userNumber) === "number"){
+function enterUserNumber() {
+	var userNumber;
+	if (confirm("Master, would you like to enter a number for me?")) {
+		userNumber = parseFloat(prompt("What number will you pick, Master?"));
+		if (typeof (userNumber) === "number" && !isNaN(userNumber)) {
 			if ((userNumber % 2 === 0)) {
 				alert("Master, your number is even!");
 			} else {
 				alert("Master, your number is odd!");
 			}
 
-			alert("Master, your number + 100 is " + (parseFloat(userNumber + 100)) + "!");
+			alert("Master, your number + 100 is " + ((userNumber + 100)) + "!");
 
 			if (userNumber > 0) {
-				alert("Master, you have a positive number.")
+				alert("Master, you have a positive number.");
 			} else {
-				alert("Master, you have a negative number.")
+				alert("Master, you have a negative number.");
 			}
 		} else {
-			alert("Master, you entered something that isn't a number. Please try again and enter a number.")
+			alert("Master, you entered something that isn't a number. Please try again and enter a number.");
 		}
+	} else {
+		alert("Oh...okay. Thank you for your time Master.");
+	}
+}
 
-
+enterUserNumber();

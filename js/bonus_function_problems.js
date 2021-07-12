@@ -42,4 +42,3 @@ function isTrue(input){
 	}
 	return false;
 }
-

@@ -174,11 +174,38 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * HINT: The way we prompt for a value could be improved
  */
 
-function enterUserNumber() {
+// function enterUserNumber() {
+// 	var userNumber;
+// 	if (confirm("Master, would you like to enter a number for me?")) {
+// 		userNumber = parseFloat(prompt("What number will you pick, Master?"));
+// 		if (typeof (userNumber) === "number" && !isNaN(userNumber)) {
+// 			if ((userNumber % 2 === 0)) {
+// 				alert("Master, your number is even!");
+// 			} else {
+// 				alert("Master, your number is odd!");
+// 			}
+//
+// 			alert("Master, your number + 100 is " + ((userNumber + 100)) + "!");
+//
+// 			if (userNumber > 0) {
+// 				alert("Master, you have a positive number.");
+// 			} else {
+// 				alert("Master, you have a negative number.");
+// 			}
+// 		} else {
+// 			alert("Master, you entered something that isn't a number. Please try again and enter a number.");
+// 		}
+// 	} else {
+// 		alert("Oh...okay. Thank you for your time Master.");
+// 	}
+// }
+//
+// enterUserNumber();
+
+function getUserNumber() {
 	var userNumber;
-	if (confirm("Master, would you like to enter a number for me?")) {
-		userNumber = parseFloat(prompt("What number will you pick, Master?"));
-		if (typeof (userNumber) === "number" && !isNaN(userNumber)) {
+	userNumber = parseFloat(prompt("Please enter a number for me, Master."))
+	if (typeof (userNumber) === "number" && !isNaN(userNumber)) {
 			if ((userNumber % 2 === 0)) {
 				alert("Master, your number is even!");
 			} else {
@@ -194,10 +221,15 @@ function enterUserNumber() {
 			}
 		} else {
 			alert("Master, you entered something that isn't a number. Please try again and enter a number.");
-		}
-	} else {
-		alert("Oh...okay. Thank you for your time Master.");
 	}
 }
 
-enterUserNumber();
+function enterUserNumber(callback) {
+	if(confirm("Master, would you like to enter a number for me?")){
+		return callback();
+	} else {
+		alert("Gomenasai, I did not mean to trouble you Master.");
+	}
+}
+
+enterUserNumber(getUserNumber);

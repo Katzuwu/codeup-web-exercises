@@ -19,6 +19,7 @@ do{
 	var conesLeft = allCones - conesBought;
 	if(conesBought < conesLeft){
 		allCones = conesLeft;
+		console.log("Okay, you bought " + conesBought);
 		console.log("Okay! here are your ice cream cones! I have " + (conesLeft) + " left!");
 	} else if(conesBought > conesLeft){
 		if(Math.sign(conesLeft) === -1){

@@ -16,16 +16,15 @@ var allCones = Math.floor(Math.random() * 50) + 50;
 
 do{
 	var conesBought = Math.floor(Math.random() * 5) + 1;
-	var conesLeft = allCones - conesBought;
-	if(conesBought < conesLeft){
-		allCones = conesLeft;
+	allCones = allCones - conesBought;
+	if(conesBought < allCones){
 		console.log("Okay, you bought " + conesBought);
-		console.log("Okay! here are your ice cream cones! I have " + (conesLeft) + " left!");
-	} else if(conesBought > conesLeft){
-		if(Math.sign(conesLeft) === -1){
+		console.log("Okay! here are your ice cream cones! I have " + (allCones) + " left!");
+	} else if(conesBought > allCones){
+		if(Math.sign(allCones) === -1){
 			break;
 		}
-		console.log("I cannot sell you that amount of cones. I only have " + conesLeft + " left!");
+		console.log("I cannot sell you " + conesBought + " cones. I only have " + allCones + " left!");
 	}
 } while(allCones > 0);
 console.log("All cones have been sold!");

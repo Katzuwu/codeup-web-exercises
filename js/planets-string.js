@@ -26,10 +26,11 @@
 	 * string, and <li> tags around each planet.
 	 */
 
-	var planetsStringBr = 'Mercury<br>Venus<br>Earth<br>Mars<br>Jupiter<br>Saturn<br>Uranus<br>Neptune<br>Pluto<br>'
+	var planetsStringBr = planetsArray.join('<br>');
 
 	console.log(planetsStringBr);
 
-
+	var planetList = '<ul><li>' + planetsArray.join('</li><li>') + '</li></ul>'
+	console.log(planetList);
 
 })();

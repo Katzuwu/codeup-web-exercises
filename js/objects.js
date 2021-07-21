@@ -206,9 +206,9 @@
 
 	var bookList = [];
 			bookList[0] = new CreateBook('harry potter', 'jk', 'rowling');
-			bookList[1] = new CreateBook('harry potter', 'pogchamp');
+			bookList[1] = new CreateBook('harry potter', 'pog', 'champ');
 
-	bookList.forEach(function (book, index){
+	bookList.forEach(function showBookInfo (book, index){
 		console.log('Book # ' + ++index);
 		console.log('Title: ' + book.title);
 		console.log('Author: ' + book.authorFirstName + ' ' + book.authorLastName);

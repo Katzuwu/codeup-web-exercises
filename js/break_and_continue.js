@@ -16,7 +16,7 @@
 // }
 
 do {
-	var userNumber = parseFloat(prompt("Master, will you enter an odd number to skip for me?"));
+	var userNumber = parseFloat(prompt("Master, will you enter an odd number between 1 and 50 to skip for me?"));
 	if (userNumber % 2 !== 0) {
 		break;
 	}
@@ -25,8 +25,9 @@ do {
 		for (var i = 1; i < 50; i++) {
 			if (i % 2 === 0) {
 				continue;
-			} else if (i === userNumber) {
+			} if (i === userNumber) {
 				console.log("Gomenasai Master, we are going to skip: " + userNumber);
+				continue;
 			}
 			console.log("Master, here is an odd number: " + i);
 		}

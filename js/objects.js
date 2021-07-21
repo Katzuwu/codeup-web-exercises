@@ -33,7 +33,7 @@
 	// 	firstName: 'Ian',
 	// 	lastName: 'Arellano',
 	// 	sayHello: function (){
-	// 		return "Hello " + this.firstName + " " + this.lastName + "!";
+	// 		return "Hello from " + this.firstName + " " + this.lastName + "!";
 	// 	}
 	// };
 	//
@@ -58,10 +58,38 @@
 	//     {name: 'Ryan', amount: 250},
 	//     {name: 'George', amount: 320}
 	// ];
-	//
+
+	// function calculateDiscount(amount, discountThreshold, discountPercentage){
+	// 	if(amount < discountThreshold){
+	// 		return 0;
+	// 	} else {
+	// 		return amount * discountPercentage;
+	// 	}
+	// }
+
+	// for (var i = 0; i < shoppers.length; i += 1) {
+	// 	var discountedAmount = calculateDiscount(shoppers[i].amount, discountThreshold, discountPercentage);
+	// 	var output = shoppers[i].name + ' is purchasing ' + shoppers[i].amount +
+	// 		' of stuff. He will get ' + discountedAmount +
+	// 		' off the purchase and pay ' +
+	// 		(shoppers[i].amount - discountedAmount) + '.';
+	// 	console.log(output);
+	// }
+
+	// shoppers.forEach(function (shopper){
+	// 	var discountedAmount = calculateDiscount(shopper.amount, 200, .12);
+	// 	var output = shopper.name + ' is purchasing ' + shopper.amount +
+	// 		' of stuff. He will get ' + discountedAmount +
+	// 		' off the purchase and pay ' +
+	// 		(shopper.amount - discountedAmount) + '.';
+	// 	console.log(output);
+	// });
+
+
+
 	// shoppers.forEach(function (shopper){
 	// 	if(shopper.amount > 200){
-	// 		console.log('Congratulations ' + shopper.name + ', you have spent over $200! Your total is $' + shopper.amount + ". You get a 12% discount. Your new total is: " + (shopper.amount - (shopper.amount * .12)) + ".");
+	// 		console.log('Congratulations ' + shopper.name + ', you have spent over $200! Your total is $' + shopper.amount + ". You get a 12% discount. Your discount total is " + (shopper.amount * .12) + ". Your new total is: " + (shopper.amount - (shopper.amount * .12)) + ".");
 	// 	} else {
 	// 		console.log("I'm sorry " + shopper.name + ", you did not spend over $200. You spent $" + shopper.amount);
 	// 	}

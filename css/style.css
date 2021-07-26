@@ -1,0 +1,38 @@
+#top {
+    text-align: center;
+}
+
+body {
+    background-image: url("../img/ogp_na.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #00FF14;
+    font-family: AppleGothic;
+}
+
+ul {
+    list-style: square;
+}
+
+table {
+    border: 1px solid blue;
+    table-layout: auto;
+    width: auto;
+}
+
+th, td {
+    border: 1px solid blue;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: pink;
+}
+a:hover {
+    color: orange;
+}
+a:active {
+    color: yellow;
+}

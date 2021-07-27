@@ -3,11 +3,14 @@
 }
 
 body {
-    background-image: url("../img/ogp_na.png");
+    background-image: url("../img/dio.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: #00FF14;
     font-family: AppleGothic;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 
 ul {

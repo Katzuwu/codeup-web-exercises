@@ -31,42 +31,77 @@
 <main class="container">
 	<div class="jumbotron d-none d-md-block"><h1>Welcome to Pizza World</h1></div>
 	<h2>Build your own pizza!</h2>
-	<ul class="nav nav-tabs">
-		<li class="nav-item">
-			<a class="nav-link active" href="#">Size and Crust</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#">Cheese and Sauce</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" href="#">Toppings</a>
-		</li>
-	</ul>
-	<div class="card">
-		<div class="card-header active">
-			Choose size and crust
+	<nav>
+		<div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Size and Crust</a>
+			<a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Cheese and Sauce</a>
+			<a class="nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Toppings</a>
 		</div>
-		<div class="card-body">
-			<div class="card-header">
-				Hand Tossed
-			<div class="list-group">
-				<div class="list-group-item card-body">Garlic seasoned crust with a rich buttery taste</div>
-				<div class="list-group-item form-check">
-					<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-					<label class="form-check-label" for="exampleRadios1">
-						Default radio
-					</label>
-				</div>
-				<div class="list-group-item form-check">
-					<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-					<label class="form-check-label" for="exampleRadios2">
-						Second default radio
-					</label>
-				</div>
-			</div>
-	</div>
+	</nav>
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class="card">
+						<div class="card-header active">
+							Choose size and crust
+						</div>
+						<div class="card-body">
+							<div class="card">
+							<div class="card-header">
+								Hand Tossed
+							</div>
+							</div>
+							<div class="card">
+								<div class="list-group list-group-flush">
+									<div class="list-group-item card-body">Garlic seasoned crust with a rich buttery taste</div>
+									<div class="list-group-item form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="hand10" value="option1" checked>
+										<label class="form-check-label" for="hand10">
+											Default radio
+										</label>
+									</div>
+									<div class="list-group-item form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="hand12" value="option2">
+										<label class="form-check-label" for="hand12">
+											Second default radio
+										</label>
+									</div>
+								</div>
+							</div>
+									</div>
+						<div class="card-body">
+							<div class="card">
+								<div class="card-header">
+									Hand Tossed
+								</div>
+							</div>
+							<div class="card">
+								<div class="list-group list-group-flush">
+									<div class="list-group-item card-body">Garlic seasoned crust with a rich buttery taste</div>
+									<div class="list-group-item form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="thin12" value="option1" checked>
+										<label class="form-check-label" for="thin12">
+											Default radio
+										</label>
+									</div>
+									<div class="list-group-item form-check">
+										<input class="form-check-input" type="radio" name="exampleRadios" id="thin14" value="option2">
+										<label class="form-check-label" for="thin14">
+											Second default radio
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer text-right">
+							<a class="btn btn-primary" href="#" role="button">Next</a>
+						</div>
+						</div>
 		</div>
+		<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+		<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
 	</div>
+
+
 </main>
 
 

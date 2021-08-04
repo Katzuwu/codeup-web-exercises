@@ -119,10 +119,10 @@
 		}
 	}
 
-	console.log(all2s([2, 4, 1, 9])); // false
-	console.log(all2s([2, 2, 2, 2, 2])); // true
-	console.log(all2s([2])); // true
-	console.log(all2s([])); // false
+	// console.log(all2s([2, 4, 1, 9])); // false
+	// console.log(all2s([2, 2, 2, 2, 2])); // true
+	// console.log(all2s([2])); // true
+	// console.log(all2s([])); // false
 
 	/*
 
@@ -157,6 +157,21 @@
 
 
 	*/
+
+	function objectHasAllAsAnd2s (obj) {
+		return allAs(obj.letters) && all2s(obj.numbers);
+	}
+
+	console.log(objectHasAllAsAnd2s({
+		letters: ['a', 'A', 'b', 'A'],
+			numbers: [2, 2, 2, 2, 2, 2]
+	})); // returns false;
+
+	console.log(objectHasAllAsAnd2s({
+		letters: ['a', 'A', 'a', 'A'],
+		numbers: [2, 2, 2, 2, 2, 2]
+	})); // returns true;
+
 </script>
 
 </body>

@@ -61,45 +61,85 @@
 	// }
 	// ]
 
-	var users = [
-		{
-			firstName: 'bob',
-			lastName: 'Smith'
-		},
-		{
-			firstName: 'BOB',
-			lastName: 'Smith'
-		},
-		{
-			firstName: 'Fred',
-			lastName: 'Smith'
-		},
-		{
-			firstName: 'Cathy',
-			lastName: 'Smith'
-		},
-		{
-			firstName: 'Dawn',
-			lastName: 'Smith'
-		}
-	]
+	// var users = [
+	// 	{
+	// 		firstName: 'bob',
+	// 		lastName: 'Smith'
+	// 	},
+	// 	{
+	// 		firstName: 'BOB',
+	// 		lastName: 'Smith'
+	// 	},
+	// 	{
+	// 		firstName: 'Fred',
+	// 		lastName: 'Smith'
+	// 	},
+	// 	{
+	// 		firstName: 'Cathy',
+	// 		lastName: 'Smith'
+	// 	},
+	// 	{
+	// 		firstName: 'Dawn',
+	// 		lastName: 'Smith'
+	// 	}
+	// ]
+	//
+	// function filterOutBobUsers(arr) {
+	// 	var outputUsers = [];
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if(arr[i].firstName.toLowerCase() !== 'bob'){
+	// 			outputUsers.push(arr[i]);
+	// 		}
+	// 	} return outputUsers
+	// 	// for (var i = 0; i > arr.length; i++) {
+	// 	// 	if (arr.firstName.toLowerCase().indexOf(i)) {
+	// 	// 		arr.splice()
+	// 	// 	}
+	// 	// }
+	// 	// return arr;
+	// }
+	//
+	// console.log(filterOutBobUsers(users));
 
-	function filterOutBobUsers(arr) {
-		var outputUsers = [];
-		for (var i = 0; i < arr.length; i++) {
-			if(arr[i].firstName.toLowerCase() !== 'bob'){
-				outputUsers.push(arr[i]);
+	var numbers = 176248
+	var numbersArray = numbers.toString().split("");
+	var total = 0;
+	numbersArray.forEach(function (number, index){
+		if (index % 2 === 0){
+			if ((parseFloat(number) * 2) < 10){
+				total += parseFloat(number) * 2;
+			} else {
+				var numberArray = (number*2).toString().split('');
+				var numberToAddToTotal = parseFloat(numberArray[0]) + parseFloat(numberArray[1]);
+				total += numberToAddToTotal
 			}
-		} return outputUsers
-		// for (var i = 0; i > arr.length; i++) {
-		// 	if (arr.firstName.toLowerCase().indexOf(i)) {
-		// 		arr.splice()
-		// 	}
-		// }
-		// return arr;
+
+		} else {
+			total += parseFloat(number);
+		}
+	});
+
+	function processNumber(number){
+		var numbersArray = numbers.toString().split("");
+		var total = 0;
+		numbersArray.forEach(function (number, index){
+			if (index % 2 === 0){
+				if ((parseFloat(number) * 2) < 10){
+					total += parseFloat(number) * 2;
+				} else {
+					var numberArray = (number*2).toString().split('');
+					var numberToAddToTotal = parseFloat(numberArray[0]) + parseFloat(numberArray[1]);
+					total += numberToAddToTotal
+				}
+
+			} else {
+				total += parseFloat(number);
+			}
+		});
+		return total
 	}
 
-	console.log(filterOutBobUsers(users));
+	console.log(processNumber(numbers))
 
 </script>
 </body>

@@ -5,6 +5,21 @@
 	<title>jQuery Exercises</title>
 </head>
 <body>
+<h1 id="bodyguard" class="protector">Stop stop stop. where going where going</h1>
+<p id="liar" class="codeup">Please i'm in a hurry i must go out now</p>
+<ul id="main-guy" class="codeup">
+	<li>who are you</li>
+</ul>
+<div id="lying-guy" class="deceit">i'm fart</div>
 
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script>
+	$(document).ready(function (){
+		$('li').css('font-size', '20px');
+		$('h1, p, li').css('background', 'yellow');
+		alert($('h1').html());
+	});
+</script>
 </body>
 </html>

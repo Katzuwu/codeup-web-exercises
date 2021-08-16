@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery FAQ</title>
+	<style>
+		.invisible {
+			visibility: hidden;
+		}
+		.highlighted {
+			background-color: #FF0;
+		}
+	</style>
+</head>
+<body>
+<dl>
+	<dt>Hawai'i Volcanoes National Park</dt>
+	<dd class="invisible">THURSTON LAVA TUBE
+		The Thurston lava tube is an easily accessible and very interesting lava tube close to the Kīlauea Iki parking lot.  A 20 minute (1/3 mile) walk through a tree fern forest and a illuminated cave-like lava tube takes you from the main road through the Thurston Lava Tube and back to the parking lot.
+
+	</dd>
+
+	<dt>Channel Islands National Park</dt>
+	<dd class="invisible">Where is Channel Islands National Park?
+		Channel Islands National Park consists of five of the eight Channel Islands that span 160 miles off the coast of southern California.</dd>
+
+	<dt>Hot Springs National Park</dt>
+	<dd class="invisible">Where can we soak in the thermal springs?
+		There are only three locations to see and touch the thermal springs. The natural springs are about 143F, which is too hot for soaking, so the only way to soak in the thermal water is to use one of the two Bathhouses on the Row that still offer bathing experiences – the Quapaw and the Buckstaff.</dd>
+
+	<dt>Gateway Arch National Park</dt>
+	<dd class="invisible">How tall is the Gateway Arch?
+		The Arch is 630 feet (192 meters) tall; 630 feet is also the distance from leg to leg at ground level.</dd>
+
+	<dt>Yellowstone National Park</dt>
+	<dd class="invisible">
+		Where do I Make Reservations to Stay in Yellowstone?
+		Yellowstone National Park Lodges operates the nine lodges in the park. All are open from late spring through fall, but only two are open in the winter: Old Faithful Snow Lodge and Mammoth Hot Springs Hotel. Be sure to make a reservation early!</dd>
+
+	<dt>Independence National Historical Park</dt>
+	<dd class="invisible">Are face masks required?
+		Consistent with CDC recommendations, face masks are required for all individuals over the age of two inside park buildings, regardless of vaccination status. See the Superintendent's Compendium for additional information.</dd>
+
+	<dt>Kruger National Park</dt>
+	<dd class="invisible">What should I pack?
+		There are many useful items that you should pack when going on a safari. Read our guide on What to Pack for a Safari in Kruger Park.</dd>
+
+	<dt>Evros Delta National Park</dt>
+	<dd class="invisible">Evros Delta Wildlife
+		Among the snake species found here are the nose-horned viper, the sand boa, the cat snake, grass snake, dice snake and leopard snake, while other reptiles include several species of tortoise, terrapin and lizard. There are many amphibians too, such as the warty newt, yellow-bellied toad, marsh frog and fire salamander. The rarest mammal is the now-misnamed common otter, and there are also some wolves, jackals and polecats, indicating that the delta is not all marshland.</dd>
+
+	<dt>Vanoise National Park</dt>
+	<dd class="invisible">Where the Vanoise National Park is located? The Vanoise National Park is situated in the Savoie département, part of the Auvergne-Rhône-Alpes region. It is surrounded by two valleys: the Tarentaise to the North and the Maurienne to the South.</dd>
+
+	<dt>Hiidenportti National Park</dt>
+	<dd class="invisible">Check for Warnings
+		When forest and grass fire warnings (en.ilmatieteenlaitos.fi) are in effect, fire is only allowed at covered campfire sites that have a flue. A fire can be also lit in fireplaces at wilderness and other huts. Always use extreme caution when handling fire. The one who lights a fire is always responsible for its safe use. Please note, that making fire at these campfire sites can be banned locally.
+
+		Gathering at the campfire sites increases the risk of coronavirus infection. Guidelines concerning coronavirus COVID-19. </dd>
+</dl>
+
+<button>Toggle Description visibility</button>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+<script>
+	$('button').click(function (){
+		$('dd').toggleClass('invisible');
+	});
+	$('dt').click(function (){
+		$(this).toggleClass('highlighted');
+	});
+</script>
+
+</body>
+</html>

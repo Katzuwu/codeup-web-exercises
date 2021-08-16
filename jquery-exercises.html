@@ -7,7 +7,7 @@
 <body>
 <h1 id="bodyguard" class="protector">Stop stop stop. where going where going</h1>
 <p id="liar" class="codeup">Please i'm in a hurry i must go out now</p>
-<ul id="main-guy" class="codeup">
+<ul id="main-guy" class="good-guy">
 	<li>who are you</li>
 </ul>
 <div id="lying-guy" class="deceit">i'm fart</div>
@@ -17,8 +17,19 @@
 <script>
 	$(document).ready(function (){
 		$('#bodyguard').click(function (){
-			$('#bodyguard').css('color', 'red')
+			$('#bodyguard').css('color', 'hotpink');
 		});
+		$('.codeup').dblclick(function (){
+			$('.codeup').css('font-size', '18px');
+		});
+		$('li').hover(
+			function (){
+				$(this).css('color', 'red');
+			},
+			function (){
+				$(this).css('color', 'black');
+			}
+		);
 	});
 </script>
 </body>

@@ -60,39 +60,82 @@
 		Gathering at the campfire sites increases the risk of coronavirus infection. Guidelines concerning coronavirus COVID-19. </dd>
 </dl>
 
-<button>Toggle Description visibility</button>
-<ul>
-	<h3>The Park</h3>
+<button class="description">Toggle Description visibility</button>
+
+<ul id="park1">
+	<h3 id="header1">The Park</h3>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 </ul>
-<ul>
-	<h3>The Other Park</h3>
+<ul id="park2">
+	<h3 id="header2">The Other Park</h3>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 </ul>
 
-<ul>
-	<h3>Yet Other Park</h3>
+<ul id="park3">
+	<h3 id="header3">Yet Other Park</h3>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 	<li>Fact</li>
 </ul>
+<button class="ul-btn">Click me, ya dingus!</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 
 <script>
-	$('button').click(function (){
+	$('.description').click(function (){
 		$('dd').toggleClass('invisible');
 	});
 	$('dt').click(function (){
 		$(this).toggleClass('highlighted');
 	});
+	//commented out code is my solution
+	
+	$('.ul-btn').click(function (){
+		$('ul').each(function(){
+			$(this).children().last().toggleClass('highlighted');
+		});
+		// $('#park1').children().last().toggleClass('highlighted');
+		// $('#park2').children().last().toggleClass('highlighted');
+		// $('#park3').children().last().toggleClass('highlighted');
+	});
+	
+	// $('#header1').click(function (){
+	// 	$('#park1').css('font-weight', 'bold');
+	// });
+	// $('#header2').click(function (){
+	// 	$('#park2').css('font-weight', 'bold');
+	// });
+	// $('#header3').click(function (){
+	// 	$('#park3').css('font-weight', 'bold');
+	// });
+	
+	$('h3').click(function (){
+		$(this).siblings().css('font-weight', 'bold');
+	});
+	
+	$('li').click(function (){
+		$(this).parent().children('li').first().css('color', 'blue')
+	});
+	// $('li').click(function (){
+	// 	$('li').each(function (index){
+	// 		if (index === 0){
+	// 			$(this).css('color', 'blue');
+	// 		}
+	// 		if (index === 4){
+	// 			$(this).css('color', 'blue');
+	// 		}
+	// 		if (index === 8){
+	// 			$(this).css('color', 'blue');
+	// 		}
+	// 	});
+	// });
 </script>
 
 </body>

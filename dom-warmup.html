@@ -27,12 +27,16 @@
 
 	$('section button').hover(function (){
 			$(this).css('background-color', 'hotpink');
-		},
+				var number = $(this).attr("data-number");
+				$("#message").html(number);
+			},
 		function (){
 			$(this).css('background-color', 'unset');
+			$("#message").html("");
 		});
-
-	$("#reset").click(function(){
+			
+			
+			$("#reset").click(function(){
 		document.location.reload();
 	});
 

@@ -28,7 +28,7 @@
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 	function dataTable() {
-		$.get('data/inventory.json').done(function dataTable(data) {
+		$.get('data/inventory.json').done(function(data) {
 			data.forEach(function (item) {
 				// console.log(item);
 				$('#insertProducts').append('<tr>' +

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<div id='map' style='width: 900px; height: 900px;'></div>
+<script>
+	mapboxgl.accessToken = MAPBOX_API_TOKEN;
+	const map = new mapboxgl.Map({
+		container: 'map', // container ID
+		style: 'mapbox://styles/mapbox/streets-v11', // style URL
+		center: [-98.4916, 29.4252], // starting position [lng, lat]
+		zoom: 10 // starting zoom
+	});
+	
+	geocode('233 Kalispell Avenue, Whitefish, Montana 59937, United States', MAPBOX_API_TOKEN).then(function(result) {
+	    map.setCenter(result);
+	    map.setZoom(13);
+	});
+	
+	
+	//doesn't move map, only shows the results
+	reverseGeocode({lng: -157.8060, lat: 21.2620}, MAPBOX_API_TOKEN).then(function(results) {
+		console.log(results);
+	});
+	
+</script>
+</body>
+</html>

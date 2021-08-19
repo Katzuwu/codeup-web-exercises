@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapbox Maps API</title>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<div id='map' style='width: 900px; height: 900px;'></div>
+<script>
+	mapboxgl.accessToken = MAPBOX_API_TOKEN;
+	const map = new mapboxgl.Map({
+		container: 'map', // container ID
+		style: 'mapbox://styles/mapbox/streets-v11', // style URL
+		center: [-98.4916, 29.4252], // starting position [lng, lat]
+		zoom: 10 // starting zoom
+	});
+	
+	
+	
+	var restaurants = [{
+		address: '6526 Babcock Rd, San Antonio, TX 78249',
+		popupHTML: '<h1>Nama Ramen</h1>'
+	},{
+		address: '2211 NW Military Hwy Suite 132, Castle Hills, TX 78213',
+		popupHTML: '<h1>Sushishima</h1>'
+	}, {
+		address: '8603 TX-151 #105, San Antonio, TX 78245',
+		popupHTML: '<h1>Wingstop</h1>'
+	}];
+
+	function placeMarkerAndPopup(info, token, map) {
+		geocode(info.address, token).then(function(coordinates) {
+			var popup = new mapboxgl.Popup()
+					.setHTML(info.popupHTML);
+			var marker = new mapboxgl.Marker()
+					.setLngLat(coordinates)
+					.addTo(map)
+					.setPopup(popup);
+			// popup.addTo(map);
+		});
+	}
+
+	restaurants.forEach(function (restaurant){
+		placeMarkerAndPopup(restaurant, MAPBOX_API_TOKEN, map);
+	});
+</script>
+</body>
+</html>

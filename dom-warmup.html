@@ -5,55 +5,80 @@
 	<title>DOM Warmups</title>
 </head>
 <body>
-<h1 id="goodMorning">Good Morning, Draco!</h1>
-<button id="afternoon">It's afternoon</button>
-<section>
-	<button data-number="1">Change Me</button>
-	<button data-number="2">Change Me Too</button>
-	<button data-number="3">Don't forget about me</button>
-	<p id="message"></p>
-</section>
-<button id="reset">Reset</button>
-<section>
-	<input type="text" id="wordToDisplay">
-	<button id="displayWord">Display in DOM</button>
-	<p id="word"></p>
-</section>
-<section>
-	<button id="create-an-element">Create an Element</button>
-</section>
+<!--<h1 id="goodMorning">Good Morning, Draco!</h1>-->
+<!--<button id="afternoon">It's afternoon</button>-->
+<!--<section>-->
+<!--	<button data-number="1">Change Me</button>-->
+<!--	<button data-number="2">Change Me Too</button>-->
+<!--	<button data-number="3">Don't forget about me</button>-->
+<!--	<p id="message"></p>-->
+<!--</section>-->
+<!--<button id="reset">Reset</button>-->
+<!--<section>-->
+<!--	<input type="text" id="wordToDisplay">-->
+<!--	<button id="displayWord">Display in DOM</button>-->
+<!--	<p id="word"></p>-->
+<!--</section>-->
+<!--<section>-->
+<!--	<button id="create-an-element">Create an Element</button>-->
+<!--</section>-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--<script>-->
+<!--	'use strict';-->
+
+
+<!--	var header = document.getElementById('goodMorning');-->
+<!--	var afternoonButton = document.getElementById('afternoon');-->
+<!--	afternoonButton.addEventListener('click', function (){-->
+<!--		header.innerHTML = 'Good Afternoon, Draco!';-->
+<!--	});-->
+
+<!--	$('section button').hover(function (){-->
+<!--			$(this).css('background-color', 'hotpink');-->
+<!--				var number = $(this).attr("data-number");-->
+<!--				$("#message").html(number);-->
+<!--			},-->
+<!--		function (){-->
+<!--			$(this).css('background-color', 'unset');-->
+<!--			$("#message").html("");-->
+<!--		});-->
+<!--			-->
+<!--			-->
+<!--			$("#reset").click(function(){-->
+<!--		document.location.reload();-->
+<!--	});-->
+<!--	$('#displayWord').click(function (){-->
+<!--		$('#word').html($('input').val());-->
+<!--	});-->
+<!--	-->
+<!--	$('#create-an-element').click(function (){-->
+<!--		$(this).after('<p>I am new</p>');-->
+<!--	});-->
+
+<!-- TODO: add functionality such that the number in the input will be added to the total in the h1 when the button is clicked
+      No changes to the existing HTML is needed, other than adding jQuery or JavaScript.
+-->
+<h1 id="number-output">0</h1>
+<form>
+	<input id="number-input" type="number" min="0" max="100">
+	<button id="add-btn">Add</button>
+</form>
 <script>
-	'use strict';
-
-
-	var header = document.getElementById('goodMorning');
-	var afternoonButton = document.getElementById('afternoon');
-	afternoonButton.addEventListener('click', function (){
-		header.innerHTML = 'Good Afternoon, Draco!';
+	$('#add-btn').click(function (e){
+		e.preventDefault();
+		var addNumber = parseFloat($('#number-input').val());
+		var number = parseFloat($('#number-output').text());
+		$('#number-output').text(number + addNumber);
 	});
 
-	$('section button').hover(function (){
-			$(this).css('background-color', 'hotpink');
-				var number = $(this).attr("data-number");
-				$("#message").html(number);
-			},
-		function (){
-			$(this).css('background-color', 'unset');
-			$("#message").html("");
-		});
-			
-			
-			$("#reset").click(function(){
-		document.location.reload();
-	});
-	$('#displayWord').click(function (){
-		$('#word').html($('input').val());
-	});
 	
-	$('#create-an-element').click(function (){
-		$(this).after('<p>I am new</p>');
-	});
+	// added teacher solution to help solve mine.
+	// document.querySelector('#add-btn').addEventListener('click', function(e) {
+	// 	e.preventDefault();
+	// 	let currentNum = Number(document.querySelector('#number-output').innerText);
+	// 	let numberToAdd = Number(document.querySelector('#number-input').value);
+	// 	document.querySelector('#number-output').innerText = currentNum + numberToAdd;
+	// });
 
 </script>
 </body>

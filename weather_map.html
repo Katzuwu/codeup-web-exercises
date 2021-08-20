@@ -10,10 +10,14 @@
 			width: 100%;
 			height: 400px;
 		}
+		#search-field {
+			display: flex;
+		}
 	</style>
 </head>
 <body>
-<div>
+<div id="search-field">
+	<p>Place</p>
 	<input id="address" type="text" placeholder="Enter location">
 	<button id="new-location">Find</button>
 </div>
@@ -51,7 +55,7 @@
 	    geocode(address, MAPBOX_API_TOKEN)
 	        .then(function(result) {
 	            map.setCenter(result);
-	        })
+	        });
 	});
 </script>
 

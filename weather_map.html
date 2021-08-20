@@ -14,62 +14,73 @@
 	</style>
 </head>
 <body>
+<!-- weather navbar -->
 <div>
 	<h2>Weather App</h2>
 </div>
+<!--search box-->
 <div id="search-field">
 	<p>Place</p>
 	<input id="address" type="text" placeholder="Enter location">
 	<button id="new-location">Find</button>
 </div>
-<div id="weather-timeline"></div>
+<!--forecast-->
+<div id="weather-timeline" class="row"></div>
+<!--map-->
 <div id='map'></div>
+<!--script links-->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 
+<!--work js-->
 <script>
-	mapboxgl.accessToken = MAPBOX_API_TOKEN;
-	var map = new mapboxgl.Map({
-		container: 'map',
-		style: 'mapbox://styles/mapbox/streets-v9',
-		zoom: 18,
-		center: [-98.4912, 29.4243]
-	});
-	new mapboxgl.Marker()
-			.setLngLat([-98.4912, 29.4243])
-			.addTo(map);
+	// mapboxgl.accessToken = MAPBOX_API_TOKEN;
+	// var map = new mapboxgl.Map({
+	// 	container: 'map',
+	// 	style: 'mapbox://styles/mapbox/streets-v9',
+	// 	zoom: 18,
+	// 	center: [-98.4912, 29.4243]
+	// });
+	// new mapboxgl.Marker()
+	// 		.setLngLat([-98.4912, 29.4243])
+	// 		.addTo(map);
 	
-	function displayCard(){
-		var html = '<div class="coffee card col-6 p-2">';
-		html += '<p class="card-header p-0">' + data.daily[index].dt * 1000 + '</p>';
-		html += '<p class="card text>"' + data.daily[index].temp.day + '/' + data.daily[index].temp.max +'</p>';
+	// displays weather
+	function displayCard(daily){
+		var html = '<div class="card col-3 m-2 p-2">';
+		html += '<p class="card-header p-0">' + new Date(daily.dt * 1000) + '</p>';
+		html += '<p class="card text">' + daily.temp.day + ' / ' + daily.temp.max +'</p>';
 		html += '<hr>';
-		html += '<p class="card-text">Description: ' + data.daily[index].weather[0].description + '</p>';
-		html += '<p class="card-text">Humidity: ' + data.daily[index].humidity + '</p>';
+		html += '<p class="card-text">Description: ' + daily.weather[0].description + '</p>';
+		html += '<p class="card-text">Humidity: ' + daily.humidity + '</p>';
 		html += '<hr>';
-		html += '<p class="card-text">Wind: ' + data.daily[index].windspeed + '</p>';
+		html += '<p class="card-text">Wind: ' + daily.wind_speed + '</p>';
 		html += '<hr>';
-		html += '<p class="card-text">Wind: ' + data.daily[index].wind_speed + '</p>';
-		html += '<hr>';
-		html += '<p class="card-text">Wind: ' + data.daily[index].pressure + '</p>';
+		html += '<p class="card-text">Pressure: ' + daily.pressure + '</p>';
 		html += '</div>';
 
 		return html;
 	}
 	
-	$.get('https://api.openweathermap.org/data/2.5/onecall', {
-		APPID: WEATHER_APP_ID,
-		lat:    29.423017,
-		lon:   -98.48527,
-		units: "imperial",
-		exclude: "minutely, hourly"
-	}).done(function(data) {
-		console.log(data);
-		// console.log(data.daily[0].dt * 1000); verify that i'm getting the right data
-	});
+	// gets weather
+	
+		$.get('https://api.openweathermap.org/data/2.5/onecall', {
+			APPID: WEATHER_APP_ID,
+			lat: 29.423017,
+			lon: -98.48527,
+			units: "imperial",
+			exclude: "minutely, hourly"
+		}).done(function (data) {
+			console.log(data);
+			// console.log(data.daily[0]);
+			// console.log(data.daily[0].dt * 1000); verify that i'm getting the right data
+			for (var i = 0; i < 5; i++) {
+				$('#weather-timeline').append(displayCard(data.daily[i]));
+			}
+		});
 	
 	$('#new-location').click(function() {
 	    var address = $('#address').val();

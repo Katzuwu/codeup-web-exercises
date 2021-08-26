@@ -71,7 +71,7 @@ let longestEmail = users.reduce((long, user) => {
 
 console.log(longestEmail.join(""));
 
-let allInstructors = users.reduce((currentName, user, index, array) =>{
+let allInstructors = users.reduce((currentName, user) =>{
 	currentName += `${user.name} `
 	return currentName;
 }, 'Your current instructors are: ');

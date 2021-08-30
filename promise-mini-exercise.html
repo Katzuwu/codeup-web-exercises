@@ -39,6 +39,25 @@
 	fetch(quoteUrl).then(response => response.json())
 	.then(data => console.log(data.quote))
 	.catch(console.error);
+	
+	// -------- MINI EXERCISE 3
+	
+	/* TODO: Create a new endpoint on https://hookbin.com/ and use fetch to send some POST requests.
+		Experiment with sending different shapes of data in the body of the request.
+	 */
+	const hookbinUrl = 'https://hookb.in/K3x10N33zmFPMK88MGRr'
+	fetch(hookbinUrl, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			title: 'Iron Giant',
+			rating: '100'
+		})
+	})
+	.then(console.log)
+	.catch(console.error);
 
 </script>
 </body>

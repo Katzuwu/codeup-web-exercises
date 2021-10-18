@@ -5,18 +5,20 @@
 	<title>Warm Up</title>
 </head>
 <body>
-	<p id="paragraph" style="visibility: visible">This paragraph will disappear when the button is clicked</p>
+	<p id="paragraph">This paragraph will disappear when the button is clicked</p>
 
 	<button id="hide-btn">Hide Paragraph</button>
+	<button id="show-btn">Show Paragraph</button>
 
 <script>
 	document.getElementById("hide-btn").addEventListener("click", function (e){
 		e.preventDefault();
-		if(document.getElementById("paragraph").style.visibility === "visible") {
-			document.getElementById("paragraph").style.visibility = "hidden"
-		} else if (document.getElementById("paragraph").style.visibility === "hidden"){
-			document.getElementById("paragraph").style.visibility = "visible";
-		}
+		document.getElementById("paragraph").style.display = "none";
+	});
+	
+	document.getElementById("show-btn").addEventListener("click", function (e){
+		e.preventDefault();
+		document.getElementById("paragraph").style.display = "block";
 	});
 </script>
 </body>

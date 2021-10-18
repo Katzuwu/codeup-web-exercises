@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Warm Up</title>
+</head>
+<body>
+	<p id="paragraph" style="visibility: visible">This paragraph will disappear when the button is clicked</p>
+
+	<button id="hide-btn">Hide Paragraph</button>
+
+<script>
+	document.getElementById("hide-btn").addEventListener("click", function (e){
+		e.preventDefault();
+		if(document.getElementById("paragraph").style.visibility === "visible") {
+			document.getElementById("paragraph").style.visibility = "hidden"
+		} else if (document.getElementById("paragraph").style.visibility === "hidden"){
+			document.getElementById("paragraph").style.visibility = "visible";
+		}
+	});
+</script>
+</body>
+</html>

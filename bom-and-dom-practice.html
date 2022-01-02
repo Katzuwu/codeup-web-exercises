@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>This is a title</title>
+</head>
+<body>
+	<h1 id="header">This header will change when being clicked.</h1>
+	<p id="disappear" style="visibility: visible">This will disappear when you click the button.</p>
+	<button id="hide-btn">Hide the paragraph</button>
+
+	<h1 id="count-header">This will start counting. <span id="counter"></span></h1>
+
+<script>
+	let header = document.getElementById("header");
+	let hideParagraph = document.getElementById("disappear");
+	let hideBtn = document.getElementById("hide-btn");
+	let countHeader = document.getElementById("count-header");
+	let counter = document.getElementById("counter");
+	
+	header.addEventListener("click", function (){
+		this.innerText = "Wow I changed. How cool!"
+	});
+	
+	hideBtn.addEventListener("click", function (){
+		if(hideParagraph.style.visibility === "visible"){
+			hideParagraph.style.visibility = "hidden";
+			hideBtn.innerText = "Show the paragraph"
+		} else {
+			hideParagraph.style.visibility = "visible"
+			hideBtn.innerText = "Hide the paragraph"
+		}
+	});
+	
+	// Wanted to use $(document).ready without jQuery
+	document.addEventListener('DOMContentLoaded', function() {
+		let count = 0;
+		setInterval(function (){
+			counter.innerHTML = count++
+		}, 1000)
+	});
+</script>
+</body>
+</html>

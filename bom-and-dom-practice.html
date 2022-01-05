@@ -11,34 +11,58 @@
 
 	<h1 id="count-header">This will start counting. <span id="counter"></span></h1>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script>
-	let header = document.getElementById("header");
-	let hideParagraph = document.getElementById("disappear");
-	let hideBtn = document.getElementById("hide-btn");
-	let countHeader = document.getElementById("count-header");
-	let counter = document.getElementById("counter");
+	// let header = document.getElementById("header");
+	// let hideParagraph = document.getElementById("disappear");
+	// let hideBtn = document.getElementById("hide-btn");
+	// let countHeader = document.getElementById("count-header");
+	// let counter = document.getElementById("counter");
 	
-	header.addEventListener("click", function (){
-		this.innerText = "Wow I changed. How cool!"
+	// header.addEventListener("click", function (){
+	// 	this.innerText = "Wow I changed. How cool!"
+	// });
+	
+	// hideBtn.addEventListener("click", function (){
+	// 	if(hideParagraph.style.visibility === "visible"){
+	// 		hideParagraph.style.visibility = "hidden";
+	// 		hideBtn.innerText = "Show the paragraph"
+	// 	} else {
+	// 		hideParagraph.style.visibility = "visible"
+	// 		hideBtn.innerText = "Hide the paragraph"
+	// 	}
+	// });
+	
+	// // Wanted to use $(document).ready without jQuery
+	// document.addEventListener('DOMContentLoaded', function() {
+	// 	let count = 0;
+	// 	setInterval(function (){
+	// 		counter.innerHTML = count++
+	// 	}, 1000)
+	// });
+
+	//rewritten in jQuery
+	$("#header").click(function(){
+		$("#header").html("Wow I changed! How cool.")
 	});
-	
-	hideBtn.addEventListener("click", function (){
-		if(hideParagraph.style.visibility === "visible"){
-			hideParagraph.style.visibility = "hidden";
-			hideBtn.innerText = "Show the paragraph"
+
+	$("#hide-btn").click(function(){
+		if($("#disappear").css("visibility", "visible")){
+			$("#disappear").css("visibility", "hidden")
+			$("#hide-btn").text("Show the paragraph")
 		} else {
-			hideParagraph.style.visibility = "visible"
-			hideBtn.innerText = "Hide the paragraph"
+			$("#disappear").css("visibility", "visible")
+			$("#hide-btn").text("Hide the paragraph")
 		}
 	});
-	
-	// Wanted to use $(document).ready without jQuery
-	document.addEventListener('DOMContentLoaded', function() {
+
+	$(document).ready(function(){
 		let count = 0;
-		setInterval(function (){
-			counter.innerHTML = count++
+		setInterval(function(){
+			$("#counter").html(count++)
 		}, 1000)
 	});
 </script>
+
 </body>
 </html>

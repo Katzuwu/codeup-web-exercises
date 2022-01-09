@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>This is a title</title>
 	<style>
-		.hidden{
+		.hidden {
 			display: none;
 		}
-		.show{
+
+		.show {
 			display: block;
 		}
 	</style>
 </head>
+
 <body>
 	<h1 id="header">This header will change when being clicked.</h1>
 	<p id="disappear" class="show">This will disappear when you click the button.</p>
@@ -21,42 +24,65 @@
 
 	<p>Let's try another thing. Enter a word in the box and we'll display it below.</p>
 	<input id="user-word"><button type="submit" id="word-submit">Submit</button>
-	<p id="display"></p>
+	<p><strong id="display"></strong></p>
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script>
-	//rewritten in jQuery
-	$("#header").click(function(){
-		$("#header").html("Wow I changed! How cool.")
-	});
+	<P>Okay one more thing. Let's play with punctuation. If you end with a period, you'll get a normal response. If you
+		end with an exclamation point, you'll get shouted at! If you ask a question, it'll give you a question back.</P>
 
-	$("#hide-btn").click(function(){
-		if($("#disappear").hasClass('show')){
-			$("#disappear").removeClass("show").addClass("hidden")
-			$("#hide-btn").text("Show the paragraph");
-		} else {
-			$("#disappear").removeClass('hidden').addClass("show");
-			$("#hide-btn").text("Hide the paragraph");
-		}
-	});
+	<input id="user-sentence"><button type="submit" id="sentence-submit">Submit</button>
 
-	$(document).ready(function(){
-		let count = 0;
-		setInterval(function(){
-			$("#counter").html(count++)
-		}, 1000)
-	});
+	<p>Response: <span id="response"></span></p>
 
-	$("#word-submit").click(function(e){
-		e.preventDefault;
-		let word = $("#user-word");
-		$("#display").text(word.val());
-	});
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script>
+		//rewritten in jQuery
+		$("#header").click(function () {
+			$("#header").html("Wow I changed! How cool.")
+		});
+
+		$("#hide-btn").click(function () {
+			if ($("#disappear").hasClass('show')) {
+				$("#disappear").removeClass("show").addClass("hidden")
+				$("#hide-btn").text("Show the paragraph");
+			} else {
+				$("#disappear").removeClass('hidden').addClass("show");
+				$("#hide-btn").text("Hide the paragraph");
+			}
+		});
+
+		$(document).ready(function () {
+			let count = 0;
+			setInterval(function () {
+				$("#counter").html(count++)
+			}, 1000)
+		});
+
+		$("#word-submit").click(function (e) {
+			e.preventDefault;
+			let word = $("#user-word");
+			$("#display").text(word.val());
+		});
+
+		$("#sentence-submit").click(function(e){
+			e.preventDefault;
+			let sentence = $("#user-sentence");
+			if(sentence.val().includes(".")){
+				$("#response").html("Thank you for your input.");
+			} else if(sentence.val().includes("!")){
+				$("#response").html("LOUD NOISES!");
+			} else if(sentence.val().includes("?")){
+				$("#response").html("I don't know, can you?");
+			} else if(!sentence.val().includes(".") || !sentence.val().includes("!") || !sentence.val().includes("?")){
+				$("#response").html("Please use proper punctuation.");
+			}
+		});
 
 	// let funnyWord = prompt("Hello, I'd like to play a game. What game would you like?");
 	// alert("Okay, let's play " + funnyWord + ".");
 
-</script>
+	</script>
 
 </body>
+
 </html>

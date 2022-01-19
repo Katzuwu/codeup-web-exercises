@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practicing Javascript</title>
+    </head>
+    <body>
+        <script>
+            "use strict";
+            //1. Write a JavaScript program that accept two integers and display the larger.
+            const highestInteger = (num1, num2) => {
+                if (num1 > num2){
+                    return "The first number is bigger";
+                } else {
+                    return "The second number is bigger";
+                }
+            }
+console.log(highestInteger(5, 9));
+console.log(highestInteger(20, 10));
+
+//2. Write a JavaScript conditional statement to find the sign of product of three numbers. Display an alert box with the specified sign. 
+//Sample numbers : 3, -7, 2
+//Output : The sign is -
+const signOfThreeNumbers = (num1, num2, num3) => {
+    let answer = num1 + num2 + num3;
+    if(answer > 0){
+        return "The answer is +";
+    } else {
+        return "The asnwer is -";
+    }
+}
+console.log(signOfThreeNumbers(110, 20, -100));
+console.log(signOfThreeNumbers(100, -100, -10));
+
+//3. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the result. 
+//Sample numbers : 0, -1, 4
+//Output : 4, 0, -1
+const sortThreeNumbers = (num1, num2, num3) => {
+    let numberArray = [num1, num2, num3];
+    return numberArray.sort().reverse();
+}
+
+alert("We sorted three numbers. 5, -10, 4 \n" + sortThreeNumbers(5, -10, 4));
+//4. Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the result. 
+//Sample numbers : -5, -2, -6, 0, -1
+//Output : 0
+const findLargestIntOfFive = (num1, num2, num3, num4, num5) => {
+    return Math.max(num1, num2, num3, num4, num5);
+}
+alert("Five numbers are picked. -1, -5, -10, -6, 1. This is the highest " + findLargestIntOfFive(-1, -5, -10, -6, 1));
+
+//5. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the screen. 
+//Sample Output :
+//"0 is even"
+//"1 is odd"
+//"2 is even"
+const oddAndEvenToFifteen = ()  =>{
+    for(let i = 0; i < 16; i++){
+        if(i % 2 != 0){
+            console.log(i + " is odd");
+        } else {
+            console.log(i + " is even")
+        }
+    }
+}
+
+oddAndEvenToFifteen();
+
+        </script>
+    </body>
+</html>

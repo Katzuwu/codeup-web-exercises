@@ -39,14 +39,16 @@ const sortThreeNumbers = (num1, num2, num3) => {
     return numberArray.sort().reverse();
 }
 
-alert("We sorted three numbers. 5, -10, 4 \n" + sortThreeNumbers(5, -10, 4));
+//alert("We sorted three numbers. 5, -10, 4 \n" + sortThreeNumbers(5, -10, 4));
+//commented out because I'm tired of alert every time.
+
 //4. Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the result. 
 //Sample numbers : -5, -2, -6, 0, -1
 //Output : 0
 const findLargestIntOfFive = (num1, num2, num3, num4, num5) => {
     return Math.max(num1, num2, num3, num4, num5);
 }
-alert("Five numbers are picked. -1, -5, -10, -6, 1. This is the highest " + findLargestIntOfFive(-1, -5, -10, -6, 1));
+//alert("Five numbers are picked. -1, -5, -10, -6, 1. This is the highest " + findLargestIntOfFive(-1, -5, -10, -6, 1));
 
 //5. Write a JavaScript for loop that will iterate from 0 to 15. For each iteration, it will check if the current number is odd or even, and display a message to the screen. 
 //Sample Output :
@@ -64,6 +66,46 @@ const oddAndEvenToFifteen = ()  =>{
 }
 
 oddAndEvenToFifteen();
+
+//7. Write a JavaScript program which iterates the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
+const fizzBuzz = () => {
+    for(let i = 0; i < 101; i++){
+        if(i % 15 === 0){
+            console.log("FizzBuzz");
+        } else if(i % 3 === 0){
+            console.log("Fizz");
+        } else if(i % 5 === 0){
+            console.log("Buzz");
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+fizzBuzz();
+
+//10. Write a JavaScript program to construct the following pattern, using a nested for loop.
+const repeatLoop = () =>{
+    let string = "*";
+    for(let i = 1; i < 6; i++){
+        console.log(string.repeat(i));
+    }
+}
+
+repeatLoop();
+
+//Write a JavaScript program to get the integers in range (x, y).
+//Example : range(2, 9)
+//Expected Output : [3, 4, 5, 6, 7, 8]
+const range = (num1, num2) =>{
+    let arr = [];
+    for(let i = num1 + 1; i < num2; i++){
+        arr.push(i);
+    }
+    return arr;
+}
+
+console.log(range(2, 9));
 
         </script>
     </body>

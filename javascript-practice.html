@@ -107,6 +107,17 @@ const range = (num1, num2) =>{
 
 console.log(range(2, 9));
 
+//Write a JavaScript function to truncate a string to a certain number of words
+const truncateLastWords = (str, num) =>{
+    let strArray = str.split(" ");
+    let newArray = [];
+    for(let i = 0; i < num; i++){
+        newArray.push(strArray[i]);
+    }
+    return newArray.join(" ")
+}
+
+console.log(truncateLastWords("I hope this works", 2)); //expecting "I hope"
         </script>
     </body>
 </html>
